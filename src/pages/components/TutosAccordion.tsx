@@ -98,7 +98,7 @@ const tutosContent = [
 
 const TutosAccordion = () => {
   return (
-    <Accordion fullWidth={true}>
+    <Accordion fullWidth={true} >
       {tutosContent.map((tuto, i) => (
         <AccordionItem key={i} aria-label={`Accordion ${i}`} title={tuto.title}>
           {tuto.content}

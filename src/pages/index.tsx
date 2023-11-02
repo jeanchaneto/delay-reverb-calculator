@@ -33,7 +33,7 @@ export default function Home() {
   };
 
   return (
-    <div className=" py-24 lg:py-32 min-h-screen bg-gradient-radial from-primary-50 to-transparent">
+    <div className=" py-24 lg:py-32 min-h-screen bg-gradient-to-t from-primary-50/50 to-black ">
       {/* Copied notification */}
       {showNotification && (
         <div className=" flex align-baseline backdrop-blur-xl border-1 border-default-500 text-default-500  z-30 rounded-xl p-2 fixed bottom-16 right-16 ">
@@ -56,9 +56,9 @@ export default function Home() {
       )}
       <div className="relative isolate ">
 
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-bold tracking-tigh sm:text-6xl text-foreground-900">
+       <div className="bg-gradient-radial from-primary-100 to-80% to-transparent" >
+          <div className="mx-auto max-w-2xl text-center  px-6 ">
+            <h1 className="text-4xl font-bold tracking-tigh sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-primary-600 via-primary-800 to-primary-700  ">
               Delay & Reverb
               <br /> Calculator
             </h1>
@@ -89,25 +89,25 @@ export default function Home() {
           {/* Reverb Times Section */}
           <section className="mt-16 flow-root ">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-foreground-800" >Reverb Times</h2>
+              <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-foreground-800  px-6 " >Reverb Times</h2>
               <ReverbTable valueProps={valueProps} results={results} />
             </div>
           </section>
           {/* Delay Times Section */}
           <section className="max-w-4xl mt-16 mx-auto">
             {" "}
-            <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-foreground-800">Delay Times & LFO frequencies</h2>
+            <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-foreground-800  px-6 ">Delay Times & LFO frequencies</h2>
             <DelayTable valueProps={valueProps} results={results} />
-          </section>
+          </section></div>
           {/* Tutorial Section */}
-          <section className="max-w-4xl mt-16 mx-auto">
+          <section className="max-w-4xl mt-16 mx-auto ">
             {" "}
             {/* TO DO */}
-            <div className="max-w-4xl mt-8 mx-auto">
+            <div className="max-w-4xl mt-8 mx-auto  px-6 ">
               <TutosAccordion/>
             </div>
           </section>
-        </div>
+       
       </div>
 
     </div>
