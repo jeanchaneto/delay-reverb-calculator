@@ -13,11 +13,12 @@ const lato = Lato({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <NextUIProvider>
-      <div className="relative" >
-      <main className={`${lato.variable} font-sans bg-background dark text-foreground-500 relative`} >
-        <Component {...pageProps} />
-      </main>
-      <Footer/></div>
+      <div className={`${lato.variable} font-sans relative`}>
+        <main className="bg-background dark text-foreground-500 relative">
+          <Component {...pageProps} />
+        </main>
+        <Footer />
+      </div>
     </NextUIProvider>
   );
 }

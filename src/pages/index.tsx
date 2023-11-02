@@ -1,12 +1,10 @@
 import { calculateDelaysAndReverb } from "@/utils/calculator";
 import { Input } from "@nextui-org/react";
 import { useState } from "react";
-
 import ReverbTable from "./components/ReverbTable";
 import DelayTable from "./components/DelayTable";
 import TutosAccordion from "./components/TutosAccordion";
 import Head from "next/head";
-import Footer from "./components/Footer";
 
 export default function Home() {
   const [bpm, setBpm] = useState(120);
@@ -45,9 +43,8 @@ export default function Home() {
 
         <meta
           name="keywords"
-          content="Delay Calculator, Reverb Calculator, Delay and Reverb, Music Production Tools, Audio Effects Calculator, Sound Design Tools"
+          content="Delay Calculator, Reverb Calculator, Delay and Reverb, Audio Effects Calculator"
         />
-
         <meta
           property="og:title"
           content="Delay and Reverb Calculator: get your timings spot on!"
@@ -56,10 +53,10 @@ export default function Home() {
           property="og:description"
           content="The ultimate delay and reverb times calculator for music producers. Fine-tune your tracks by calculating the ideal delay and reverb settings for any genre."
         />
-        <meta property="og:image" content="URL_TO_YOUR_IMAGE" />
+        <meta property="og:image" content="/images.logo.png" />
         <meta property="og:url" content="https://delayreverbcalculator.com/" />
 
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="/images.logo.png" />
         <meta
           name="twitter:title"
           content="Delay and Reverb Times Calculator: get your timings spot on"
@@ -68,7 +65,7 @@ export default function Home() {
           name="twitter:description"
           content="The ultimate delay and reverb times calculator for music producers. Fine-tune your tracks by calculating the ideal delay and reverb settings for any genre."
         />
-        <meta name="twitter:image" content="URL_TO_YOUR_IMAGE" />
+        <meta name="twitter:image" content="/images.logo.png" />
       </Head>
       {/* Copied notification */}
       {showNotification && (
@@ -92,7 +89,7 @@ export default function Home() {
       )}
     
         <div className="bg-gradient-radial from-primary-100 to-80% to-transparent">
-          <div className="mx-auto max-w-2xl text-center  px-6 ">
+          <div className="mx-auto max-w-2xl text-center  px-6 md:px-0 ">
             <h1 className="text-4xl font-bold tracking-tigh sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-primary-600 via-primary-800 to-primary-700  ">
               Delay & Reverb
               <br /> Calculator
@@ -126,7 +123,7 @@ export default function Home() {
           {/* Reverb Times Section */}
           <section className="mt-16 flow-root ">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-foreground-800  px-6 ">
+              <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-foreground-800  px-6 md:px-0 ">
                 Reverb Times
               </h2>
               <ReverbTable valueProps={valueProps} results={results} />
@@ -135,7 +132,7 @@ export default function Home() {
           {/* Delay Times Section */}
           <section className="max-w-4xl mt-16 mx-auto">
             {" "}
-            <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-foreground-800  px-6 ">
+            <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-foreground-800  px-6 md:px-0 ">
               Delay Times & LFO frequencies
             </h2>
             <DelayTable valueProps={valueProps} results={results} />
@@ -145,7 +142,7 @@ export default function Home() {
         <section className="max-w-4xl mt-16 mx-auto ">
           {" "}
           {/* TO DO */}
-          <div className="max-w-4xl mt-8 mx-auto  px-6 ">
+          <div className="max-w-4xl mt-8 mx-auto  px-6 md:px-0 ">
             <TutosAccordion />
           </div>
         </section>
