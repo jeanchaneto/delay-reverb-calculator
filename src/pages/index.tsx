@@ -14,8 +14,9 @@ import {
 export default function Home() {
   const [bpm, setBpm] = useState(120);
   const results = calculateDelaysAndReverb(bpm);
+  console.log(results)
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const userInput = parseInt(event.target.value);
+    const userInput = parseFloat(event.target.value);
 
     if (!isNaN(userInput)) {
       setBpm(userInput);
@@ -24,8 +25,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen py-24 lg:py-32  ">
-      <h1 className="font-bold text-4xl sm:text-6xl text-[#1887A3] tracking-tight ">
-        The Delay & Reverb Calculator
+      <h1 className="font-bold text-4xl sm:text-6xl text-primary-500 tracking-tight text-center ">
+        The Delay & Reverb
+        <br /> Calculator
       </h1>
       <div className="py-24">
         <Input
@@ -49,8 +51,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <Table
             aria-label="Example static collection table"
-            classNames={{ th: "font-semiBold text-lg bg-blue-950", td: "text-base" }}
-
+            classNames={{ th: " text-lg text-default-800", td: "text-base" }}
           >
             <TableHeader>
               <TableColumn>Reverb Size</TableColumn>
@@ -60,25 +61,35 @@ export default function Home() {
             </TableHeader>
             <TableBody>
               <TableRow key="1">
-                <TableCell>Tight Ambience</TableCell>
+                <TableCell className="text-default-700  ">
+                  Tight Ambience
+                </TableCell>
                 <TableCell>{results.reverbTightAmbience.preDelay}</TableCell>
                 <TableCell>{results.reverbTightAmbience.decayTime}</TableCell>
-                <TableCell>{results.reverbTightAmbience.totalReverbTime}</TableCell>
+                <TableCell>
+                  {results.reverbTightAmbience.totalReverbTime}
+                </TableCell>
               </TableRow>
               <TableRow key="2">
-                <TableCell>Zoey Lang</TableCell>
+                <TableCell className="text-default-700  ">
+                  Small Room
+                </TableCell>
                 <TableCell>Technical Lead</TableCell>
                 <TableCell>Paused</TableCell>
                 <TableCell>Active</TableCell>
               </TableRow>
               <TableRow key="3">
-                <TableCell>Jane Fisher</TableCell>
+                <TableCell className="text-default-700  ">
+                  Large Room
+                </TableCell>
                 <TableCell>Senior Developer</TableCell>
                 <TableCell>Active</TableCell>
                 <TableCell>Active</TableCell>
               </TableRow>
               <TableRow key="4">
-                <TableCell>William Howard</TableCell>
+                <TableCell className="text-default-700  ">
+                  Hall
+                </TableCell>
                 <TableCell>Community Manager</TableCell>
                 <TableCell>Vacation</TableCell>
                 <TableCell>Active</TableCell>
