@@ -28,9 +28,7 @@ export default function Home() {
   const handleValueClick = (event: React.MouseEvent<HTMLSpanElement>) => {
     const value = event.currentTarget.textContent || "";
     navigator.clipboard.writeText(value);
-
     setShowNotification(true);
-
     setTimeout(() => setShowNotification(false), 1000);
   };
 
@@ -100,7 +98,7 @@ export default function Home() {
             <TableBody>
               <TableRow key="1">
                 <TableCell className="text-default-700  ">
-                  Tight Ambience{" "}
+                  <span>Tight Ambience</span>
                   <span className="text-default-500">- (1/4 Note)</span>
                 </TableCell>
                 <TableCell>
@@ -122,7 +120,7 @@ export default function Home() {
 
               <TableRow key="2">
                 <TableCell className="text-default-700  ">
-                  Small Room{" "}
+                  <span>Small Room</span>
                   <span className="text-default-500">- (1/2 Note)</span>
                 </TableCell>
                 <TableCell>
@@ -144,7 +142,8 @@ export default function Home() {
 
               <TableRow key="3">
                 <TableCell className="text-default-700  ">
-                  Large Room <span className="text-default-500">- (1 Bar)</span>
+                  <span>Large Room</span>{" "}
+                  <span className="text-default-500">- (1 Bar)</span>
                 </TableCell>
                 <TableCell>
                   <span {...valueProps}>
@@ -165,7 +164,8 @@ export default function Home() {
 
               <TableRow key="4">
                 <TableCell className="text-default-700  ">
-                  Hall <span className="text-default-500">- (2 Bars)</span>
+                  <span>Hall</span>{" "}
+                  <span className="text-default-500">- (2 Bars)</span>
                 </TableCell>
                 <TableCell>
                   <span {...valueProps}>{results.reverbHall.preDelay}</span>
@@ -201,167 +201,312 @@ export default function Home() {
             <TableBody>
               <TableRow key="1">
                 <TableCell className="text-default-700">
-                  1/1 <span className="text-default-500">- (1 Bar)</span>
+                  <span>1/1</span>{" "}
+                  <span className="text-default-500">- (1 Bar)</span>
                 </TableCell>
                 <TableCell>
-                  <span {...valueProps}>{results.wholeNote}</span> ms <br />
-                  <span {...valueProps}>{results.wholeNoteFreq}</span> Hz
+                  <span {...valueProps}>{results.wholeNote}</span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>{results.wholeNoteFreq}</span>{" "}
+                  <span>Hz</span>
                 </TableCell>
                 <TableCell>
-                  <span {...valueProps}>{results.dottedWholeNote}</span> ms{" "}
-                  <br />
-                  <span {...valueProps}>{results.dottedWholeNoteFreq}</span> Hz
+                  <span {...valueProps}>{results.dottedWholeNote}</span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>
+                    {results.dottedWholeNoteFreq}
+                  </span>{" "}
+                  <span>Hz</span>
                 </TableCell>
                 <TableCell>
-                  <span {...valueProps}>{results.tripletWholeNote}</span> ms{" "}
-                  <br />
-                  <span {...valueProps}>{results.tripletWholeNoteFreq}</span> Hz
+                  <span {...valueProps}>{results.tripletWholeNote}</span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>
+                    {results.tripletWholeNoteFreq}
+                  </span>{" "}
+                  <span>Hz</span>
                 </TableCell>
               </TableRow>
               <TableRow key="2">
                 <TableCell className="text-default-700">
-                  1/2 <span className="text-default-500">- (1/2 Bar)</span>
+                  <span>1/2</span>{" "}
+                  <span className="text-default-500">- (1/2 Bar)</span>
                 </TableCell>
                 <TableCell>
-                  <span {...valueProps}>{results.halfNote}</span> ms <br />
-                  <span {...valueProps}>{results.halfNoteFreq}</span> Hz
+                  <span {...valueProps}>{results.halfNote}</span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>{results.halfNoteFreq}</span>{" "}
+                  <span>Hz</span>
                 </TableCell>
                 <TableCell>
-                  <span {...valueProps}>{results.dottedHalfNote}</span> ms{" "}
-                  <br />
-                  <span {...valueProps}>{results.dottedHalfNoteFreq}</span> Hz
+                  <span {...valueProps}>{results.dottedHalfNote}</span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>{results.dottedHalfNoteFreq}</span>{" "}
+                  <span>Hz</span>
                 </TableCell>
                 <TableCell>
-                  <span {...valueProps}>{results.tripletHalfNote}</span> ms{" "}
-                  <br />
-                  <span {...valueProps}>{results.tripletHalfNoteFreq}</span> Hz
+                  <span {...valueProps}>{results.tripletHalfNote}</span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>
+                    {results.tripletHalfNoteFreq}
+                  </span>{" "}
+                  <span>Hz</span>
                 </TableCell>
               </TableRow>
               <TableRow key="3">
                 <TableCell className="text-default-700">
-                  1/4 <span className="text-default-500">- (1/4 Bar)</span>
+                  <span>1/4</span>{" "}
+                  <span className="text-default-500">- (1/4 Bar)</span>
                 </TableCell>
                 <TableCell>
-                  <span {...valueProps}>{results.quarterNote}</span> ms <br />
-                  <span {...valueProps}>{results.quarterNoteFreq}</span> Hz
+                  <span {...valueProps}>{results.quarterNote}</span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>{results.quarterNoteFreq}</span>{" "}
+                  <span>Hz</span>
                 </TableCell>
                 <TableCell>
-                  <span {...valueProps}>{results.dottedQuarterNote}</span> ms{" "}
-                  <br />
+                  <span {...valueProps}>{results.dottedQuarterNote}</span>{" "}
+                  <span>ms</span> <br />
                   <span {...valueProps}>
                     {results.dottedQuarterNoteFreq}
                   </span>{" "}
-                  Hz
+                  <span>Hz</span>
                 </TableCell>
                 <TableCell>
-                  <span {...valueProps}>{results.tripletQuarterNote}</span> ms{" "}
-                  <br />
+                  <span {...valueProps}>{results.tripletQuarterNote}</span>{" "}
+                  <span>ms</span> <br />
                   <span {...valueProps}>
                     {results.tripletQuarterNoteFreq}
                   </span>{" "}
-                  Hz
+                  <span>Hz</span>
                 </TableCell>
               </TableRow>
+
               <TableRow key="4">
                 <TableCell className="text-default-700">
-                  1/8 <span className="text-default-500">- (1/8 Bar)</span>
+                  <span>1/8</span>{" "}
+                  <span className="text-default-500">- (1/8 Bar)</span>
                 </TableCell>
                 <TableCell>
-                  <span {...valueProps}>{results.eighthNote}</span> ms <br />
-                  <span {...valueProps}>{results.eighthNoteFreq}</span> Hz
+                  <span {...valueProps}>{results.eighthNote}</span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>{results.eighthNoteFreq}</span>{" "}
+                  <span>Hz</span>
                 </TableCell>
                 <TableCell>
-                  <span {...valueProps}>{results.dottedEighthNote}</span> ms{" "}
-                  <br />
-                  <span {...valueProps}>{results.dottedEighthNoteFreq}</span> Hz
+                  <span {...valueProps}>{results.dottedEighthNote}</span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>
+                    {results.dottedEighthNoteFreq}
+                  </span>{" "}
+                  <span>Hz</span>
                 </TableCell>
                 <TableCell>
-                  <span {...valueProps}>{results.tripletEighthNote}</span> ms{" "}
-                  <br />
+                  <span {...valueProps}>{results.tripletEighthNote}</span>{" "}
+                  <span>ms</span> <br />
                   <span {...valueProps}>
                     {results.tripletEighthNoteFreq}
                   </span>{" "}
-                  Hz
+                  <span>Hz</span>
                 </TableCell>
               </TableRow>
 
               <TableRow key="5">
                 <TableCell className="text-default-700">
-                  1/16 <span className="text-default-500">- (1/16 Bar)</span>
+                  <span>1/16</span>{" "}
+                  <span className="text-default-500">- (1/16 Bar)</span>
                 </TableCell>
                 <TableCell>
-                  <span {...valueProps}>{results.sixteenthNote}</span> ms <br />
-                  <span {...valueProps}>{results.sixteenthNoteFreq}</span> Hz
+                  <span {...valueProps}>{results.sixteenthNote}</span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>{results.sixteenthNoteFreq}</span>{" "}
+                  <span>Hz</span>
                 </TableCell>
                 <TableCell>
-                  <span {...valueProps}>{results.dottedSixteenthNote}</span> ms{" "}
-                  <br />
+                  <span {...valueProps}>{results.dottedSixteenthNote}</span>{" "}
+                  <span>ms</span> <br />
                   <span {...valueProps}>
                     {results.dottedSixteenthNoteFreq}
                   </span>{" "}
-                  Hz
+                  <span>Hz</span>
                 </TableCell>
                 <TableCell>
-                  <span {...valueProps}>{results.tripletSixteenthNote}</span> ms{" "}
-                  <br />
+                  <span {...valueProps}>{results.tripletSixteenthNote}</span>{" "}
+                  <span>ms</span> <br />
                   <span {...valueProps}>
                     {results.tripletSixteenthNoteFreq}
                   </span>{" "}
-                  Hz
+                  <span>Hz</span>
                 </TableCell>
               </TableRow>
 
               <TableRow key="6">
                 <TableCell className="text-default-700">
-                  1/32 <span className="text-default-500">- (1/32 Bar)</span>
+                  <span>1/32</span>{" "}
+                  <span className="text-default-500">- (1/32 Bar)</span>
                 </TableCell>
                 <TableCell>
-                  <span {...valueProps}>{results.thirtySecondNote}</span> ms{" "}
-                  <br />
-                  <span {...valueProps}>{results.thirtySecondNoteFreq}</span> Hz
+                  <span {...valueProps}>{results.thirtySecondNote}</span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>
+                    {results.thirtySecondNoteFreq}
+                  </span>{" "}
+                  <span>Hz</span>
                 </TableCell>
                 <TableCell>
                   <span {...valueProps}>{results.dottedThirtySecondNote}</span>{" "}
-                  ms <br />
+                  <span>ms</span> <br />
                   <span {...valueProps}>
                     {results.dottedThirtySecondNoteFreq}
                   </span>{" "}
-                  Hz
+                  <span>Hz</span>
                 </TableCell>
                 <TableCell>
                   <span {...valueProps}>{results.tripletThirtySecondNote}</span>{" "}
-                  ms <br />
+                  <span>ms</span> <br />
                   <span {...valueProps}>
                     {results.tripletThirtySecondNoteFreq}
                   </span>{" "}
-                  Hz
+                  <span>Hz</span>
                 </TableCell>
               </TableRow>
 
               <TableRow key="7">
                 <TableCell className="text-default-700">
-                  1/64 <span className="text-default-500">- (1/64 Bar)</span>
+                  <span>1/64</span>{" "}
+                  <span className="text-default-500">- (1/64 Bar)</span>
                 </TableCell>
                 <TableCell>
-                  <span {...valueProps}>{results.sixtyFourthNote}</span> ms{" "}
-                  <br />
-                  <span {...valueProps}>{results.sixtyFourthNoteFreq}</span> Hz
+                  <span {...valueProps}>{results.sixtyFourthNote}</span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>
+                    {results.sixtyFourthNoteFreq}
+                  </span>{" "}
+                  <span>Hz</span>
                 </TableCell>
                 <TableCell>
                   <span {...valueProps}>{results.dottedSixtyFourthNote}</span>{" "}
-                  ms <br />
+                  <span>ms</span> <br />
                   <span {...valueProps}>
                     {results.dottedSixtyFourthNoteFreq}
                   </span>{" "}
-                  Hz
+                  <span>Hz</span>
                 </TableCell>
                 <TableCell>
                   <span {...valueProps}>{results.tripletSixtyFourthNote}</span>{" "}
-                  ms <br />
+                  <span>ms</span> <br />
                   <span {...valueProps}>
                     {results.tripletSixtyFourthNoteFreq}
                   </span>{" "}
-                  Hz
+                  <span>Hz</span>
+                </TableCell>
+              </TableRow>
+
+              <TableRow key="8">
+                <TableCell className="text-default-700">
+                  <span>1/128</span>{" "}
+                  <span className="text-default-500">- (1/128 Bar)</span>
+                </TableCell>
+                <TableCell>
+                  <span {...valueProps}>
+                    {results.oneHundredTwentyEighthNote}
+                  </span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>
+                    {results.oneHundredTwentyEighthNoteFreq}
+                  </span>{" "}
+                  <span>Hz</span>
+                </TableCell>
+                <TableCell>
+                  <span {...valueProps}>
+                    {results.dottedOneHundredTwentyEighthNote}
+                  </span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>
+                    {results.dottedOneHundredTwentyEighthNoteFreq}
+                  </span>{" "}
+                  <span>Hz</span>
+                </TableCell>
+                <TableCell>
+                  <span {...valueProps}>
+                    {results.tripletOneHundredTwentyEighthNote}
+                  </span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>
+                    {results.tripletOneHundredTwentyEighthNoteFreq}
+                  </span>{" "}
+                  <span>Hz</span>
+                </TableCell>
+              </TableRow>
+              <TableRow key="9">
+                <TableCell className="text-default-700">
+                  <span>1/256</span>{" "}
+                  <span className="text-default-500">- (1/256 Bar)</span>
+                </TableCell>
+                <TableCell>
+                  <span {...valueProps}>
+                    {results.twoHundredFiftySixthNote}
+                  </span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>
+                    {results.twoHundredFiftySixthNoteFreq}
+                  </span>{" "}
+                  <span>Hz</span>
+                </TableCell>
+                <TableCell>
+                  <span {...valueProps}>
+                    {results.dottedTwoHundredFiftySixthNote}
+                  </span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>
+                    {results.dottedTwoHundredFiftySixthNoteFreq}
+                  </span>{" "}
+                  <span>Hz</span>
+                </TableCell>
+                <TableCell>
+                  <span {...valueProps}>
+                    {results.tripletTwoHundredFiftySixthNote}
+                  </span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>
+                    {results.tripletTwoHundredFiftySixthNoteFreq}
+                  </span>{" "}
+                  <span>Hz</span>
+                </TableCell>
+              </TableRow>
+
+              <TableRow key="10">
+                <TableCell className="text-default-700">
+                  <span>1/512</span>{" "}
+                  <span className="text-default-500">- (1/512 Bar)</span>
+                </TableCell>
+                <TableCell>
+                  <span {...valueProps}>{results.fiveHundredTwelfthNote}</span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>
+                    {results.fiveHundredTwelfthNoteFreq}
+                  </span>{" "}
+                  <span>Hz</span>
+                </TableCell>
+                <TableCell>
+                  <span {...valueProps}>
+                    {results.dottedFiveHundredTwelfthNote}
+                  </span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>
+                    {results.dottedFiveHundredTwelfthNoteFreq}
+                  </span>{" "}
+                  <span>Hz</span>
+                </TableCell>
+                <TableCell>
+                  <span {...valueProps}>
+                    {results.tripletFiveHundredTwelfthNote}
+                  </span>{" "}
+                  <span>ms</span> <br />
+                  <span {...valueProps}>
+                    {results.tripletFiveHundredTwelfthNoteFreq}
+                  </span>{" "}
+                  <span>Hz</span>
                 </TableCell>
               </TableRow>
             </TableBody>

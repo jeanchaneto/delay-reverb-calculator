@@ -37,6 +37,9 @@ export function calculateDelaysAndReverb(bpm: number) {
     dottedSixteenthNote: (baseDelay / 4) * 1.5,
     dottedThirtySecondNote: (baseDelay / 8) * 1.5,
     dottedSixtyFourthNote: (baseDelay / 16) * 1.5,
+    dottedOneHundredTwentyEighthNote: (baseDelay / 32) * 1.5,
+    dottedTwoHundredFiftySixthNote: (baseDelay / 64) * 1.5,
+    dottedFiveHundredTwelfthNote: (baseDelay / 128) * 1.5,
 
     // Triplet Delays
     tripletWholeNote: baseDelay * 4 * (2 / 3),
@@ -46,6 +49,9 @@ export function calculateDelaysAndReverb(bpm: number) {
     tripletSixteenthNote: (baseDelay / 4) * (2 / 3),
     tripletThirtySecondNote: (baseDelay / 8) * (2 / 3),
     tripletSixtyFourthNote: (baseDelay / 16) * (2 / 3),
+    tripletOneHundredTwentyEighthNote: (baseDelay / 32) * (2 / 3),
+    tripletTwoHundredFiftySixthNote: (baseDelay / 64) * (2 / 3),
+    tripletFiveHundredTwelfthNote: (baseDelay / 128) * (2 / 3),
 
     // Regular Note Frequencies
     wholeNoteFreq: 1000 / (baseDelay * 4),
@@ -67,6 +73,9 @@ export function calculateDelaysAndReverb(bpm: number) {
     dottedSixteenthNoteFreq: 1000 / ((baseDelay / 4) * 1.5),
     dottedThirtySecondNoteFreq: 1000 / ((baseDelay / 8) * 1.5),
     dottedSixtyFourthNoteFreq: 1000 / ((baseDelay / 16) * 1.5),
+    dottedOneHundredTwentyEighthNoteFreq: 1000 / ((baseDelay / 32) * 1.5),
+    dottedTwoHundredFiftySixthNoteFreq: 1000 / ((baseDelay / 64) * 1.5),
+    dottedFiveHundredTwelfthNoteFreq: 1000 / ((baseDelay / 128) * 1.5),
 
     // Triplet Note Frequencies
     tripletWholeNoteFreq: 1000 / (baseDelay * 4 * (2 / 3)),
@@ -76,6 +85,9 @@ export function calculateDelaysAndReverb(bpm: number) {
     tripletSixteenthNoteFreq: 1000 / ((baseDelay / 4) * (2 / 3)),
     tripletThirtySecondNoteFreq: 1000 / ((baseDelay / 8) * (2 / 3)),
     tripletSixtyFourthNoteFreq: 1000 / ((baseDelay / 16) * (2 / 3)),
+    tripletOneHundredTwentyEighthNoteFreq: 1000 / ((baseDelay / 32) * (2 / 3)),
+    tripletTwoHundredFiftySixthNoteFreq: 1000 / ((baseDelay / 64) * (2 / 3)),
+    tripletFiveHundredTwelfthNoteFreq: 1000 / ((baseDelay / 128) * (2 / 3)),
 
     // Reverb Times
     reverbHall: {
