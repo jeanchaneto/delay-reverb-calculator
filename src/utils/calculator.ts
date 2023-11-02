@@ -1,4 +1,83 @@
-export function calculateDelaysAndReverb(bpm: number) {
+type Reverb = {
+  preDelay: number;
+  decayTime: number;
+  totalReverbTime: number;
+}
+
+export type Results  = {
+  wholeNote: number;
+  halfNote: number;
+  quarterNote: number;
+  eighthNote: number;
+  sixteenthNote: number;
+  thirtySecondNote: number;
+  sixtyFourthNote: number;
+  oneHundredTwentyEighthNote: number;
+  twoHundredFiftySixthNote: number;
+  fiveHundredTwelfthNote: number;
+
+  dottedWholeNote: number;
+  dottedHalfNote: number;
+  dottedQuarterNote: number;
+  dottedEighthNote: number;
+  dottedSixteenthNote: number;
+  dottedThirtySecondNote: number;
+  dottedSixtyFourthNote: number;
+  dottedOneHundredTwentyEighthNote: number;
+  dottedTwoHundredFiftySixthNote: number;
+  dottedFiveHundredTwelfthNote: number;
+
+  tripletWholeNote: number;
+  tripletHalfNote: number;
+  tripletQuarterNote: number;
+  tripletEighthNote: number;
+  tripletSixteenthNote: number;
+  tripletThirtySecondNote: number;
+  tripletSixtyFourthNote: number;
+  tripletOneHundredTwentyEighthNote: number;
+  tripletTwoHundredFiftySixthNote: number;
+  tripletFiveHundredTwelfthNote: number;
+
+  wholeNoteFreq: number;
+  halfNoteFreq: number;
+  quarterNoteFreq: number;
+  eighthNoteFreq: number;
+  sixteenthNoteFreq: number;
+  thirtySecondNoteFreq: number;
+  sixtyFourthNoteFreq: number;
+  oneHundredTwentyEighthNoteFreq: number;
+  twoHundredFiftySixthNoteFreq: number;
+  fiveHundredTwelfthNoteFreq: number;
+
+  dottedWholeNoteFreq: number;
+  dottedHalfNoteFreq: number;
+  dottedQuarterNoteFreq: number;
+  dottedEighthNoteFreq: number;
+  dottedSixteenthNoteFreq: number;
+  dottedThirtySecondNoteFreq: number;
+  dottedSixtyFourthNoteFreq: number;
+  dottedOneHundredTwentyEighthNoteFreq: number;
+  dottedTwoHundredFiftySixthNoteFreq: number;
+  dottedFiveHundredTwelfthNoteFreq: number;
+
+  tripletWholeNoteFreq: number;
+  tripletHalfNoteFreq: number;
+  tripletQuarterNoteFreq: number;
+  tripletEighthNoteFreq: number;
+  tripletSixteenthNoteFreq: number;
+  tripletThirtySecondNoteFreq: number;
+  tripletSixtyFourthNoteFreq: number;
+  tripletOneHundredTwentyEighthNoteFreq: number;
+  tripletTwoHundredFiftySixthNoteFreq: number;
+  tripletFiveHundredTwelfthNoteFreq: number;
+
+  reverbHall: Reverb;
+  reverbLargeRoom: Reverb;
+  reverbSmallRoom: Reverb;
+  reverbTightAmbience: Reverb;
+}
+
+export function calculateDelaysAndReverb(bpm: number){
   const baseDelay = 60000 / bpm;
 
   function convertToNumber(string: string) {
@@ -112,5 +191,5 @@ export function calculateDelaysAndReverb(bpm: number) {
     },
   };
 
-  return transformValues(rawResults);
+  return transformValues(rawResults) as Results;
 }
