@@ -24,6 +24,7 @@ const DelayTable = ({ valueProps, results }: DelayTableProps) => {
     <Table
       aria-label="Delay Times and LFO Frequencies table"
       classNames={{ th: " text-lg text-default-800", td: "text-base" }}
+      className="mt-8"
       selectionMode="single"
       selectionBehavior="replace"
     >

@@ -24,6 +24,7 @@ const ReverbTable = ({valueProps, results}: ReverbTableProps ) => {
     <Table
     aria-label="Reverb Times Table"
     classNames={{ th: " text-lg text-default-800", td: "text-base" }}
+    className="mt-8"
     selectionMode="single"
     selectionBehavior="replace"
   >
