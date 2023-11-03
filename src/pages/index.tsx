@@ -116,7 +116,7 @@ export default function Home() {
             Enter your BPM below to discover the optimal reverb timings and
             precise delay times with their corresponding LFO frequencies for
             your track.
-            <br /> Use and abuse but let your hears be the final judge.
+            <br /> Use and abuse but let your ears be the final judge.
           </motion.p>
           <motion.div
             variants={fadeVariants}
