@@ -48,7 +48,10 @@ export default function Home() {
   };
 
   return (
-    <div className=" py-24 lg:py-32 min-h-screen bg-gradient-to-t from-primary-50/50 to-black ">
+    <motion.div 
+    initial={{opacity: 0}}
+    animate={{opacity: 1, transition: {duration: 1.5, when: "beforeChildren", ease:"easeInOut" }}}
+    className=" py-24 lg:py-32 min-h-screen bg-gradient-to-t from-primary-50/50 to-black ">
       <Head>
         <title>Delay and Reverb Calculator: get your timings spot on!</title>
         <meta
@@ -170,6 +173,6 @@ export default function Home() {
           <TutosAccordion />
         </div>
       </motion.section>
-    </div>
+    </motion.div>
   );
 }
