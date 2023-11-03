@@ -97,7 +97,7 @@ export default function Home() {
             <p className="mt-6 text-lg leading-8">
               Enter your BPM below to discover the optimal reverb timings and
               precise delay times with their corresponding LFO frequencies for
-              your track.
+              your track.<br/> Use and abuse but let your hears be the final judge.
             </p>
             <div className="mt-10 flex flex-wrap items-center max-w-[280px] mx-auto">
               <p className="text-foreground-800 text-lg whitespace-nowrap">
@@ -141,7 +141,6 @@ export default function Home() {
         {/* Tutorial Section */}
         <section className="max-w-4xl mt-16 mx-auto ">
           {" "}
-          {/* TO DO */}
           <div className="max-w-4xl mt-8 mx-auto  px-6 md:px-0 ">
             <TutosAccordion />
           </div>
