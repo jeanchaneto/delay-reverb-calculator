@@ -8,6 +8,19 @@ import Head from "next/head";
 import { motion, AnimatePresence } from "framer-motion";
 import Notification from "./components/Notification";
 
+const fadeVariants = {
+  hidden: {
+    y: 24,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5 },
+  },
+};
+const viewport = { once: true, margin: "0px 0px -200px" };
+
 export default function Home() {
   const [bpm, setBpm] = useState(120);
   const [showNotification, setShowNotification] = useState(false);
@@ -31,7 +44,7 @@ export default function Home() {
 
   const valueProps = {
     onClick: handleValueClick,
-    className: "cursor-copy ",
+    className: "cursor-copy hover:text-primary transition-color duration-300 ease ",
   };
 
   return (
@@ -71,19 +84,31 @@ export default function Home() {
       </Head>
       {/* Copied notification */}
       <AnimatePresence>{showNotification && <Notification />}</AnimatePresence>
-      <div className="bg-gradient-radial from-primary-100 to-80% to-transparent">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
+        transition={{ staggerChildren: 0.2 }}
+        className="bg-gradient-radial from-primary-100 to-80% to-transparent"
+      >
         <div className="mx-auto max-w-2xl text-center  px-6 md:px-0 ">
-          <h1 className="text-4xl font-bold tracking-tigh sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-primary-600 via-primary-800 to-primary-700  ">
+          <motion.h1
+            variants={fadeVariants}
+            className="text-4xl font-bold tracking-tigh sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-primary-600 via-primary-800 to-primary-700  "
+          >
             Delay & Reverb
             <br /> Calculator
-          </h1>
-          <p className="mt-6 text-lg leading-8">
+          </motion.h1>
+          <motion.p variants={fadeVariants} className="mt-6 text-lg leading-8">
             Enter your BPM below to discover the optimal reverb timings and
             precise delay times with their corresponding LFO frequencies for
             your track.
             <br /> Use and abuse but let your hears be the final judge.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center max-w-[280px] mx-auto">
+          </motion.p>
+          <motion.div
+            variants={fadeVariants}
+            className="mt-10 flex flex-wrap items-center max-w-[280px] mx-auto"
+          >
             <p className="text-foreground-800 text-lg whitespace-nowrap">
               Bpm of your track:{" "}
             </p>
@@ -102,33 +127,49 @@ export default function Home() {
               labelPlacement="inside"
               onChange={handleChange}
             />
-          </div>
+          </motion.div>
         </div>
         {/* Reverb Times Section */}
         <section className="mt-16 flow-root ">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-foreground-800  px-6 md:px-0 ">
+            <motion.h2
+              variants={fadeVariants}
+              className="text-3xl sm:text-4xl tracking-tight font-bold text-foreground-800  px-6 md:px-0 "
+            >
               Reverb Times
-            </h2>
-            <ReverbTable valueProps={valueProps} results={results} />
+            </motion.h2>
+            <motion.div variants={fadeVariants}>
+              <ReverbTable valueProps={valueProps} results={results} />
+            </motion.div>
           </div>
         </section>
         {/* Delay Times Section */}
         <section className="max-w-4xl mt-16 mx-auto">
           {" "}
-          <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-foreground-800  px-6 md:px-0 ">
+          <motion.h2
+            variants={fadeVariants}
+            className="text-3xl sm:text-4xl tracking-tight font-bold text-foreground-800  px-6 md:px-0 "
+          >
             Delay Times & LFO frequencies
-          </h2>
-          <DelayTable valueProps={valueProps} results={results} />
+          </motion.h2>
+          <motion.div variants={fadeVariants}>
+            <DelayTable valueProps={valueProps} results={results} />
+          </motion.div>
         </section>
-      </div>
+      </motion.div>
       {/* Tutorial Section */}
-      <section className="max-w-4xl mt-16 mx-auto ">
+      <motion.section
+        variants={fadeVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
+        className="max-w-4xl mt-16 mx-auto "
+      >
         {" "}
         <div className="max-w-4xl mt-8 mx-auto  px-6 md:px-0 ">
           <TutosAccordion />
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }
