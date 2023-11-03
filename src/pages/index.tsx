@@ -62,7 +62,7 @@ export default function Home() {
       className=" py-24 lg:py-32 min-h-screen bg-gradient-to-t from-primary-50/50 to-black "
     >
       <Head>
-        <title>Delay and Reverb Calculator: get your timings spot on!</title>
+        <title>Delay and Reverb Calculator: Get precise timings from BPM</title>
         <meta
           name="description"
           content="The ultimate delay and reverb times calculator for music producers. Fine-tune your tracks by calculating the ideal delay and reverb settings for any genre."
@@ -74,7 +74,7 @@ export default function Home() {
         />
         <meta
           property="og:title"
-          content="Delay and Reverb Calculator: get your timings spot on!"
+          content="Delay and Reverb Calculator: Get precise timings from the BPM of your track."
         />
         <meta
           property="og:description"
@@ -86,7 +86,7 @@ export default function Home() {
         <meta name="twitter:card" content="/images/logo.png" />
         <meta
           name="twitter:title"
-          content="Delay and Reverb Times Calculator: get your timings spot on"
+          content="Delay and Reverb Times Calculator: Get precise timings from the BPM of your track."
         />
         <meta
           name="twitter:description"
