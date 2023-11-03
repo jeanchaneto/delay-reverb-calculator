@@ -5,6 +5,8 @@ import ReverbTable from "./components/ReverbTable";
 import DelayTable from "./components/DelayTable";
 import TutosAccordion from "./components/TutosAccordion";
 import Head from "next/head";
+import { motion, AnimatePresence } from "framer-motion";
+import Notification from "./components/Notification";
 
 export default function Home() {
   const [bpm, setBpm] = useState(120);
@@ -68,83 +70,65 @@ export default function Home() {
         <meta name="twitter:image" content="/images.logo.png" />
       </Head>
       {/* Copied notification */}
-      {showNotification && (
-        <div className=" flex align-baseline backdrop-blur-xl border-1 border-default-500 text-default-500  z-30 rounded-xl p-2 fixed bottom-16 right-16 ">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-5 h-5"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.5 12.75l6 6 9-13.5"
-            />
-          </svg>
-          Copied to Clipboard
-        </div>
-      )}
-    
-        <div className="bg-gradient-radial from-primary-100 to-80% to-transparent">
-          <div className="mx-auto max-w-2xl text-center  px-6 md:px-0 ">
-            <h1 className="text-4xl font-bold tracking-tigh sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-primary-600 via-primary-800 to-primary-700  ">
-              Delay & Reverb
-              <br /> Calculator
-            </h1>
-            <p className="mt-6 text-lg leading-8">
-              Enter your BPM below to discover the optimal reverb timings and
-              precise delay times with their corresponding LFO frequencies for
-              your track.<br/> Use and abuse but let your hears be the final judge.
+      <AnimatePresence>{showNotification && <Notification />}</AnimatePresence>
+      <div className="bg-gradient-radial from-primary-100 to-80% to-transparent">
+        <div className="mx-auto max-w-2xl text-center  px-6 md:px-0 ">
+          <h1 className="text-4xl font-bold tracking-tigh sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-primary-600 via-primary-800 to-primary-700  ">
+            Delay & Reverb
+            <br /> Calculator
+          </h1>
+          <p className="mt-6 text-lg leading-8">
+            Enter your BPM below to discover the optimal reverb timings and
+            precise delay times with their corresponding LFO frequencies for
+            your track.
+            <br /> Use and abuse but let your hears be the final judge.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center max-w-[280px] mx-auto">
+            <p className="text-foreground-800 text-lg whitespace-nowrap">
+              Bpm of your track:{" "}
             </p>
-            <div className="mt-10 flex flex-wrap items-center max-w-[280px] mx-auto">
-              <p className="text-foreground-800 text-lg whitespace-nowrap">
-                Bpm of your track:{" "}
-              </p>
-              <Input
-                type="number"
-                variant="flat"
-                defaultValue="120"
-                color="default"
-                className="mx-auto max-w-[80px] "
-                classNames={{
-                  input: ["text-lg", "text-center", "text-foreground-800"],
-                  label: ["text-lg"],
-                  base: ["border-red-500"],
-                }}
-                size="lg"
-                labelPlacement="inside"
-                onChange={handleChange}
-              />
-            </div>
+            <Input
+              type="number"
+              variant="flat"
+              defaultValue="120"
+              color="default"
+              className="mx-auto max-w-[80px] "
+              classNames={{
+                input: ["text-lg", "text-center", "text-foreground-800"],
+                label: ["text-lg"],
+                base: ["border-red-500"],
+              }}
+              size="lg"
+              labelPlacement="inside"
+              onChange={handleChange}
+            />
           </div>
-          {/* Reverb Times Section */}
-          <section className="mt-16 flow-root ">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-foreground-800  px-6 md:px-0 ">
-                Reverb Times
-              </h2>
-              <ReverbTable valueProps={valueProps} results={results} />
-            </div>
-          </section>
-          {/* Delay Times Section */}
-          <section className="max-w-4xl mt-16 mx-auto">
-            {" "}
-            <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-foreground-800  px-6 md:px-0 ">
-              Delay Times & LFO frequencies
-            </h2>
-            <DelayTable valueProps={valueProps} results={results} />
-          </section>
         </div>
-        {/* Tutorial Section */}
-        <section className="max-w-4xl mt-16 mx-auto ">
-          {" "}
-          <div className="max-w-4xl mt-8 mx-auto  px-6 md:px-0 ">
-            <TutosAccordion />
+        {/* Reverb Times Section */}
+        <section className="mt-16 flow-root ">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-foreground-800  px-6 md:px-0 ">
+              Reverb Times
+            </h2>
+            <ReverbTable valueProps={valueProps} results={results} />
           </div>
         </section>
+        {/* Delay Times Section */}
+        <section className="max-w-4xl mt-16 mx-auto">
+          {" "}
+          <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-foreground-800  px-6 md:px-0 ">
+            Delay Times & LFO frequencies
+          </h2>
+          <DelayTable valueProps={valueProps} results={results} />
+        </section>
+      </div>
+      {/* Tutorial Section */}
+      <section className="max-w-4xl mt-16 mx-auto ">
+        {" "}
+        <div className="max-w-4xl mt-8 mx-auto  px-6 md:px-0 ">
+          <TutosAccordion />
+        </div>
+      </section>
     </div>
   );
 }
