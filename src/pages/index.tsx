@@ -1,12 +1,12 @@
 import { calculateDelaysAndReverb } from "@/utils/calculator";
 import { Input } from "@nextui-org/react";
 import { useState } from "react";
-import ReverbTable from "./components/ReverbTable";
-import DelayTable from "./components/DelayTable";
-import TutosAccordion from "./components/TutosAccordion";
+import ReverbTable from "../components/ReverbTable";
+import DelayTable from "../components/DelayTable";
+import TutosAccordion from "../components/TutosAccordion";
 import Head from "next/head";
 import { motion, AnimatePresence } from "framer-motion";
-import Notification from "./components/Notification";
+import Notification from "../components/Notification";
 
 const fadeVariants = {
   hidden: {
@@ -44,14 +44,23 @@ export default function Home() {
 
   const valueProps = {
     onClick: handleValueClick,
-    className: "cursor-copy hover:text-primary transition-color duration-300 ease ",
+    className:
+      "cursor-copy hover:text-primary transition-color duration-300 ease ",
   };
 
   return (
-    <motion.div 
-    initial={{opacity: 0}}
-    animate={{opacity: 1, transition: {duration: 1.5, when: "beforeChildren", ease:"easeInOut" }}}
-    className=" py-24 lg:py-32 min-h-screen bg-gradient-to-t from-primary-50/50 to-black ">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: {
+          duration: 1.5,
+          when: "beforeChildren",
+          ease: "easeInOut",
+        },
+      }}
+      className=" py-24 lg:py-32 min-h-screen bg-gradient-to-t from-primary-50/50 to-black "
+    >
       <Head>
         <title>Delay and Reverb Calculator: get your timings spot on!</title>
         <meta
@@ -71,10 +80,10 @@ export default function Home() {
           property="og:description"
           content="The ultimate delay and reverb times calculator for music producers. Fine-tune your tracks by calculating the ideal delay and reverb settings for any genre."
         />
-        <meta property="og:image" content="/images.logo.png" />
+        <meta property="og:image" content="/images/logo.png" />
         <meta property="og:url" content="https://delayreverbcalculator.com/" />
 
-        <meta name="twitter:card" content="/images.logo.png" />
+        <meta name="twitter:card" content="/images/logo.png" />
         <meta
           name="twitter:title"
           content="Delay and Reverb Times Calculator: get your timings spot on"
@@ -83,7 +92,8 @@ export default function Home() {
           name="twitter:description"
           content="The ultimate delay and reverb times calculator for music producers. Fine-tune your tracks by calculating the ideal delay and reverb settings for any genre."
         />
-        <meta name="twitter:image" content="/images.logo.png" />
+        <meta name="twitter:image" content="/images/logo.png" />
+        
       </Head>
       {/* Copied notification */}
       <AnimatePresence>{showNotification && <Notification />}</AnimatePresence>
