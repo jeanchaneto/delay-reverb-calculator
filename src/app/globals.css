@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+
+@theme inline {
+  --font-sans: var(--font-lato), ui-sans-serif, system-ui, sans-serif;
+}
