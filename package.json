@@ -16,7 +16,7 @@
     "@heroui/styles": "^3.2.6",
     "@next/third-parties": "^16.3.7",
     "motion": "^13.4.6",
-    "next": "16.3.7",
+    "next": "16.4.1",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
@@ -27,7 +27,7 @@
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
-    "eslint-config-next": "16.3.7",
+    "eslint-config-next": "16.4.1",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^5.0.2"
